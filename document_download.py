@@ -35,6 +35,7 @@ for row_num, row in enumerate(table.find_all('tr'), 1):
     response = requests.get(document_location)
     response_2 = requests.get(response.url)
     response_3 = requests.get(response_2.url)
+    response_4 = requests.get(response_3.url)
     if response.status_code == 200:
         with open(f'./Documents/{date}', 'wb') as f:
             f.write(response.content)
